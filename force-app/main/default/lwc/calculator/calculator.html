@@ -1,23 +1,12 @@
 <template>
-    <!--Input information -->
-    <h1 class="slds-text-heading_large">LALA</h1>
-    <div>
-        <label for="devFundamentals">Developer Fundamentals :23%</label>
-        <input type="number" id="devFundamentals" name="devFundamentals"/> 
-    </div>
-    <div>
-        <label for="process_Automation">Process Automation :30%</label>
-        <input type="number" id="process_Automation" name="process_Automation"/> 
-    </div>
-    <div>
-        <label for="userInterface">User Interface :25%</label>
-        <input type="number" id="userInterface" name="userInterface"/> 
-    </div>
-    <div>
-        <label for="testingDebbugingDeployment">Testing, Debbuging and Deployment :22%</label>
-        <input type="number" id="testingDebbugingDeployment" name="testingDebbugingDeployment"/> 
-    </div>
-
-    <P>RESULT</P>
-
+    <lightning-card  title="PD1 Calculator">
+        <lightning-button variant="brand" label="Submit" title="Primary action" class="slds-m-left_x-small" slot="actions"></lightning-button>
+        <p class="slds-p-horizontal_small">
+                <lightning-input type="number" name="devFundamentals" label="Developer Fundamentals :23%"></lightning-input>
+                <lightning-input type="number" name="process_Automation" label="Process Automation :30%"></lightning-input>
+                <lightning-input type="number" name="userInterface" label="User Interface :25%"></lightning-input>
+                <lightning-input type="number" name ="testingDebbugingDeployment" label="Testing, Debbuging and Deployment :22%"></lightning-input>
+        </p>
+        <p slot="footer">Certification score <span style="color: red">50%</span></p>
+    </lightning-card>
 </template>
