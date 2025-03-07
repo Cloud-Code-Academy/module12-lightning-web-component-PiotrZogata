@@ -6,8 +6,7 @@ const userInterfaceWeight = 0.25;
 const testingDebbugingDeploymentWeight = 0.22;
 const passingScore = 68;
 
-export default class Calculator extends LightningElement {
-
+export default class ScorePD1Calculator extends LightningElement {
     devFundamentalScore = 50;
     processAutomationScore = 50;
     userInterfaceScore = 50;
