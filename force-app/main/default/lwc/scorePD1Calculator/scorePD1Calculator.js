@@ -1,4 +1,4 @@
-import { LightningElement } from 'lwc';
+import { LightningElement} from 'lwc';
 
 const devFundamentalWeight = 0.23;
 const processAutomationWeight = 0.30;
@@ -12,11 +12,12 @@ export default class ScorePD1Calculator extends LightningElement {
     userInterfaceScore = 50;
     testingDebbugingDeploymentScore = 50;
 
-    certificationScore = 900;
+    certificationScore = 90;
 
     showResources = false;
     showGoodJob = false
 
+    //@track
     attemptHistory = [{id:1, score:15}, {id:2, score : 50}, {id:3, score:80}];
 
     handleChange(event){
@@ -34,14 +35,15 @@ export default class ScorePD1Calculator extends LightningElement {
         }
     }
 
-    calculateScore(){
+    handleClick(){
         let devFundScore = devFundamentalScore * devFundamentalWeight;
         let processAutomation = processAutomationScore * processAutomationWeight;
         let userInterface = userInterfaceScore * userInterfaceWeight;
         let testingDebbugingDeployment = testingDebbugingDeploymentScore * testingDebbugingDeploymentWeight;
-        this.certificationScore = (this.devFundScore + this.processAutomation + this.userInterface + this.testingDebbugingDeployment);
+        this.certificationScore = devFundScore + processAutomation + userInterface + testingDebbugingDeployment;
 
         this.showResourcesIfFailed();
+        this.addAttempHistory(this.score);
     }
 
     showResourcesIfFailed(){
@@ -54,4 +56,18 @@ export default class ScorePD1Calculator extends LightningElement {
         }
         this.showGoodJob = !this.showGoodJob;
     }
+
+    // addAttempHistory(score){
+    //     this.attemptHistory.push({
+    //         id : Math.floor(Math.random * 100), Score:score
+    //     }) 
+    // }   
+
+    addAttempHistory(score){
+        const attempt = 
+        {
+            id : this.attemptHistory.length + 1, Score:score
+        } 
+        this.attemptHistory =[...this.attemptHistory, attempt];
+    }   
 }
