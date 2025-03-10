@@ -19,6 +19,11 @@
                 <p>{numberOfQuestionsIncorect}</p>
             </div>
         </lightning-layout-item>
+        <lightning-layout-item padding="around-small">
+            <div class="header-column">
+                <lightning-button variant="destructive" label="Delete" title="Destructive action" onclick={handleDeleteAttempt} class="slds-m-left_x-small"></lightning-button>
+            </div>
+        </lightning-layout-item>
     </lightning-layout>
     </div>
 </template>

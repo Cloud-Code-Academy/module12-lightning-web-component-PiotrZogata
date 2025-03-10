@@ -12,4 +12,10 @@ export default class ScoreInformation extends LightningElement {
     get numberOfQuestionsIncorect(){
         return (this.numberOfQuestions - this.numberOfQuestionsCorrect);
     }
+
+    handleDeleteAttempt(){
+        console.log("handleDeleteAttempt is cliked");
+        const deleteEvent = new CustomEvent('deleteattempt', { detail:this.attemptid});
+        this.dispatchEvent(deleteEvent);
+    }
 }

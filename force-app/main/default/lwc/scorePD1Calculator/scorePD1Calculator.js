@@ -16,7 +16,7 @@ export default class ScorePD1Calculator extends LightningElement {
     numberOfQuestions = 60;
 
     showResources = false;
-    showGoodJob = false
+    showGoodJob = false;
 
     //@track
     attemptHistory = [{id:1, score:15}, {id:2, score : 50}, {id:3, score:80}];
@@ -71,4 +71,10 @@ export default class ScorePD1Calculator extends LightningElement {
         } 
         this.attemptHistory =[...this.attemptHistory, attempt];
     }   
+
+    deleteAttemptHandler(event){
+        let attemptid = event.detail;
+        this.attemptHistory = this.attemptHistory(filter(attempt => attempt.Id != attemptId))
+
+    }
 }
