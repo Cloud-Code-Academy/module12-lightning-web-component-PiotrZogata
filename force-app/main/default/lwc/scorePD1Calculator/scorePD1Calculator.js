@@ -13,6 +13,7 @@ export default class ScorePD1Calculator extends LightningElement {
     testingDebbugingDeploymentScore = 50;
 
     certificationScore = 90;
+    numberOfQuestions = 60;
 
     showResources = false;
     showGoodJob = false
@@ -43,7 +44,7 @@ export default class ScorePD1Calculator extends LightningElement {
         this.certificationScore = devFundScore + processAutomation + userInterface + testingDebbugingDeployment;
 
         this.showResourcesIfFailed();
-        this.addAttempHistory(this.score);
+        this.addAttemptHistory(this.score);
     }
 
     showResourcesIfFailed(){
@@ -63,10 +64,10 @@ export default class ScorePD1Calculator extends LightningElement {
     //     }) 
     // }   
 
-    addAttempHistory(score){
+    addAttemptHistory(score){
         const attempt = 
         {
-            id : this.attemptHistory.length + 1, Score:score
+            id : this.attemptHistory.length + 1, score:score
         } 
         this.attemptHistory =[...this.attemptHistory, attempt];
     }   
