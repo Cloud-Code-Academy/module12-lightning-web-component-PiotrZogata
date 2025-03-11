@@ -60,12 +60,6 @@ export default class ScorePD1Calculator extends LightningElement {
         this.showGoodJob = !this.showGoodJob;
     }
 
-    // addAttempHistory(score){
-    //     this.attemptHistory.push({
-    //         id : Math.floor(Math.random * 100), Score:score
-    //     }) 
-    // }   
-
     addAttemptHistory(score){
         currentHistoryId++;
         const attempt = 
