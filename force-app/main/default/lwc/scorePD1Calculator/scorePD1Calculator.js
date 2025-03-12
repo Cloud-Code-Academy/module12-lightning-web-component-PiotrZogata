@@ -70,9 +70,8 @@ export default class ScorePD1Calculator extends LightningElement {
     }   
 
     deleteAttemptHandler(event){
-        let attemptid = event.detail;
-        this.attemptHistory = this.attemptHistory(filter(attempt => attempt.Id != attemptId))
-
+        let attemptId = event.detail;
+        this.attemptHistory = this.attemptHistory.filter(attempt => attempt.id != attemptId);
     }
 
     connectedCallback(){

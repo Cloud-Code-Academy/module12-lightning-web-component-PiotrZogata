@@ -21,7 +21,13 @@
         </lightning-layout-item>
         <lightning-layout-item padding="around-small">
             <div class="header-column">
-                <lightning-button variant="destructive" label="Delete" title="Destructive action" onclick={handleDeleteAttempt} class="slds-m-left_x-small"></lightning-button>
+                <lightning-button-icon 
+                icon-name="utility:delete"
+                alternative-text="Delete"
+                class="slds-m-left_xx-small"
+                title="Delete"
+                onclick={handleDeleteAttempt}
+                ></lightning-button-icon>
             </div>
         </lightning-layout-item>
     </lightning-layout>
