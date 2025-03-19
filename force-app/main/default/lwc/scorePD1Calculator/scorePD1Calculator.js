@@ -39,10 +39,10 @@ export default class ScorePD1Calculator extends LightningElement {
     }
 
     handleClick(){
-        let devFundScore = devFundamentalScore * devFundamentalWeight;
-        let processAutomation = processAutomationScore * processAutomationWeight;
-        let userInterface = userInterfaceScore * userInterfaceWeight;
-        let testingDebbugingDeployment = testingDebbugingDeploymentScore * testingDebbugingDeploymentWeight;
+        let devFundScore = this.devFundamentalScore * devFundamentalWeight;
+        let processAutomation = this.processAutomationScore * processAutomationWeight;
+        let userInterface = this.userInterfaceScore * userInterfaceWeight;
+        let testingDebbugingDeployment = this.testingDebbugingDeploymentScore * testingDebbugingDeploymentWeight;
         this.certificationScore = devFundScore + processAutomation + userInterface + testingDebbugingDeployment;
 
         this.showResourcesIfFailed();

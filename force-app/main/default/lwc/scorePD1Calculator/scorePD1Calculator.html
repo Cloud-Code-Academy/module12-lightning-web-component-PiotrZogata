@@ -1,12 +1,12 @@
 <template>
-    <lightning-card>
-        <div  title="PD1 Calculator"></div>
+    <lightning-card title="PD1 Calculator">
+        <!-- <div  title="PD1 Calculator"></div> -->
             <lightning-button variant="brand" label="Calculate" title="Calculate" slot="actions" onclick={handleClick}></lightning-button> 
-                <div class="slds-p-horizontal_small">    
+                <div class="slds-var-p-horizontal_small">    
                     <lightning-input class="slds-container_center" type="number" name="devFundamentals" label="Developer Fundamentals :23%" value ={devFundamentalScore} onchange={handleChange}></lightning-input>
-                    <lightning-input type="number" name="process_Automation" label="Process Automation :30%" value ={processAutomationScore} onchange={handleChange}></lightning-input>
-                    <lightning-input type="number" name="userInterface" label="User Interface :25%" value ={userInterfaceScore} onchange={handleChange}></lightning-input>
-                    <lightning-input type="number" name ="testingDebbugingDeployment" label="Testing, Debbuging and Deployment :22%" value ={testingDebbugingDeploymentScore} onchange={handleChange}></lightning-input>
+                    <lightning-input class="slds-container_center" type="number" name="process_Automation" label="Process Automation :30%" value ={processAutomationScore} onchange={handleChange}></lightning-input>
+                    <lightning-input class="slds-container_center" type="number" name="userInterface" label="User Interface :25%" value ={userInterfaceScore} onchange={handleChange}></lightning-input>
+                    <lightning-input class="slds-container_center" type="number" name ="testingDebbugingDeployment" label="Testing, Debbuging and Deployment :22%" value ={testingDebbugingDeploymentScore} onchange={handleChange}></lightning-input>
                 </div>
             <div slot="footer">
                 <h1 class="slds-text-heading_large slds-text-title_caps resultText">Certification Results</h1>    
@@ -27,7 +27,7 @@
                 <template lwc:if={showResources}>
                     <ul class="slds-text-aligin_left slds-text-heading_samall slds-var-p-top_medium slds-list_dotted slds-box">
 
-                        <li class="resourceList">Resources:</li>
+                        <li class="resourceList">Resources to help:</li>
                         <li>
                             <a href="https://trailhead.salesforce.com/content/learn/trails/platform-developer-i-certification-study-guide">Trailhead PD1</a>
                         </li>
