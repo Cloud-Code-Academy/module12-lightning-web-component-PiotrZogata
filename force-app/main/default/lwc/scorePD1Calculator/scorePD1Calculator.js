@@ -52,10 +52,8 @@ export default class ScorePD1Calculator extends LightningElement {
     showResourcesIfFailed(){
         if(this.certificationScore < passingScore){
             this.showResources = true;
-            //this.showGoodJob = false;
         } else{
             this.showResources = false;
-            //this.showGoodJob = true;
         }
         this.showGoodJob = !this.showGoodJob;
     }
