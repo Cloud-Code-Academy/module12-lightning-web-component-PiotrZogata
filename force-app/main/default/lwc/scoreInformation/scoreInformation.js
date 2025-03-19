@@ -4,6 +4,7 @@ export default class ScoreInformation extends LightningElement {
 
     @api score;
     @api numberOfQuestions;
+    @api attemptId;
 
     get numberOfQuestionsCorrect(){
         return Math.floor((this.score / 100) * this.numberOfQuestions);
@@ -15,7 +16,7 @@ export default class ScoreInformation extends LightningElement {
 
     handleDeleteAttempt(){
         console.log("handleDeleteAttempt is cliked");
-        const deleteEvent = new CustomEvent('deleteattempt', { detail:this.attemptid});
+        const deleteEvent = new CustomEvent('deleteattempt', { detail:this.attemptId});
         this.dispatchEvent(deleteEvent);
     }
 }

@@ -20,8 +20,7 @@ export default class ScorePD1Calculator extends LightningElement {
 
     currentHistoryId = 0;
 
-    //@track
-    attemptHistory = [{id:1, score:15}, {id:2, score : 50}, {id:3, score:80}];
+    attemptHistory = [{id:1, Score:15}, {id:2, Score : 50}, {id:3, Score:80}];
 
     handleChange(event){
         console.log(event);
@@ -46,7 +45,7 @@ export default class ScorePD1Calculator extends LightningElement {
         this.certificationScore = devFundScore + processAutomation + userInterface + testingDebbugingDeployment;
 
         this.showResourcesIfFailed();
-        this.addAttemptHistory(this.score);
+        this.addAttemptHistory(this.Score);
     }
 
     showResourcesIfFailed(){
@@ -58,15 +57,15 @@ export default class ScorePD1Calculator extends LightningElement {
         this.showGoodJob = !this.showGoodJob;
     }
 
-    addAttemptHistory(score){
+    addAttemptHistory(Score){
         currentHistoryId++;
         const attempt = 
         {
-            id : this.currentHistoryId, score:score
+            id : this.currentHistoryId, Score
         } 
         this.attemptHistory =[...this.attemptHistory, attempt];
     }   
-
+    
     deleteAttemptHandler(event){
         let attemptId = event.detail;
         this.attemptHistory = this.attemptHistory.filter(attempt => attempt.id != attemptId);
