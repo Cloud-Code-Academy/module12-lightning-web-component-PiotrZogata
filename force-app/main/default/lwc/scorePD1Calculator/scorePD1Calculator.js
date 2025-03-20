@@ -56,19 +56,25 @@ export default class ScorePD1Calculator extends LightningElement {
         }
         this.showGoodJob = !this.showGoodJob;
     }
-
-    addAttemptHistory(Score){
-        currentHistoryId++;
-        const attempt = 
-        {
-            Id : this.currentHistoryId, Score
-        } 
-        this.attemptHistory = [...this.attemptHistory, attempt];
-    }   
+    
+    addAttemptHistory(score) {
+        try {
+            this.currentHistoryId++;
+            const attempt = {
+                Id: this.currentHistoryId,
+                Score: score
+            };
+            this.attemptHistory = [...this.attemptHistory, attempt];
+        } catch (error) {
+            // Handle the error here
+            console.error('An error occurred while adding attempt history:', error);
+        }
+    }
     
     deleteAttemptHandler(event){
         let attemptId = event.detail;
         this.attemptHistory = this.attemptHistory.filter(attempt => attempt.Id != attemptId);
+        //this.currentHistoryId--;
     }
 
     connectedCallback(){
